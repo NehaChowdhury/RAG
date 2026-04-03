@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-community
+langchain-groq
+langchain-huggingface
+sentence-transformers
+faiss-cpu
+PyPDF2
+python-dotenv
+SpeechRecognition
+audio-recorder-streamlit
+pyttsx3
