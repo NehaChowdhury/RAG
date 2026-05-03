@@ -2,6 +2,8 @@
 
 A powerful, interactive Retrieval-Augmented Generation (RAG) application that allows you to chat with your PDF documents using both **Text** and **Voice**. Built with Streamlit, LangChain, and Groq.
 
+**🚀 [Live Demo](https://chatbotbvec.streamlit.app/)**
+
 ---
 
 ## 🌟 Features
