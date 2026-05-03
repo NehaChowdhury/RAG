@@ -8,11 +8,12 @@ A powerful, interactive Retrieval-Augmented Generation (RAG) application that al
 
 - **📄 PDF Multi-Upload**: Upload one or multiple PDF files to chat with.
 - **🎙️ Voice Interaction**: 
-  - **Speech-to-Text**: Ask questions using your voice.
-  - **Text-to-Speech**: The assistant responds with both text and voice (autoplay).
+  - **Speech-to-Text**: Ask questions using your voice with real-time **Transcribing** status.
+  - **Text-to-Speech**: The assistant responds with both text and high-quality voice (autoplay) using `gTTS`.
 - **🧠 Intelligent RAG**: Uses LangChain and FAISS for efficient document retrieval.
+- **💡 Smart Fallback**: If an answer isn't in the PDF, the AI provides a general answer while explicitly stating it wasn't found in the document.
+- **🔄 UI Feedback**: Real-time "Transcribing..." and "Generating..." indicators for a smoother experience.
 - **⚡ High Performance**: Powered by Groq's Llama 3.1-8B model for lightning-fast responses.
-- **💾 Local Vector Store**: Uses HuggingFace embeddings and FAISS for local semantic search.
 
 ---
 
@@ -25,7 +26,7 @@ A powerful, interactive Retrieval-Augmented Generation (RAG) application that al
 - **Vector Database**: [FAISS](https://github.com/facebookresearch/faiss)
 - **Voice**: 
   - `SpeechRecognition` (Google API for STT)
-  - `pyttsx3` (Offline TTS)
+  - `gTTS` (Google Text-to-Speech for cloud-compatible audio)
 
 ---
 
@@ -72,14 +73,27 @@ streamlit run app.py
 
 ---
 
+## 🌐 Deployment
+
+This app is optimized for **Streamlit Community Cloud**.
+
+1. **Push to GitHub**: Ensure your latest changes are pushed to your repository.
+2. **Deploy**: Go to [share.streamlit.io](https://share.streamlit.io) and connect your repo.
+3. **Secrets**: Add your `GROQ_API_KEY` in the Streamlit Cloud dashboard under **Settings > Secrets**:
+   ```toml
+   GROQ_API_KEY = "your_key_here"
+   ```
+
+---
+
 ## 📖 How to Use
 
 1. **Upload**: Use the sidebar to upload one or more PDFs.
-2. **Process**: Click the "Process" button to index the documents.
+2. **Process**: Click the "Process PDF" button to index the documents.
 3. **Chat**: 
    - Type your question in the chat input.
-   - **OR** Click the "Speak" icon, record your question, and wait for the assistant to reply!
-4. **Listen**: The assistant will automatically read out the answer.
+   - **OR** Click the microphone icon, record your question, and wait for the assistant to reply!
+4. **Listen**: The assistant will automatically read out the answer and show a "Generating..." status while preparing it.
 
 ---
 
